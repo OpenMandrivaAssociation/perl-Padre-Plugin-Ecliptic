@@ -1,5 +1,5 @@
 %define upstream_name    Padre-Plugin-Ecliptic
-%define upstream_version 0.15
+%define upstream_version 0.16
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -60,5 +60,3 @@ rm -rf %buildroot
 %doc README Changes
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
