@@ -1,9 +1,9 @@
 %define upstream_name    Padre-Plugin-Ecliptic
-%define upstream_version 0.16
+%define upstream_version 0.17
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Padre plugin that provides Eclipse-like useful features
 License:    GPL+ or Artistic
