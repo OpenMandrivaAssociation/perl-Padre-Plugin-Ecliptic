@@ -1,5 +1,5 @@
 %define upstream_name    Padre-Plugin-Ecliptic
-%define upstream_version 0.19
+%define upstream_version 0.23
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -15,6 +15,7 @@ BuildRequires: perl(Class::XSAccessor)
 BuildRequires: perl(ExtUtils::Install)
 BuildRequires: perl(File::Which)
 BuildRequires: perl(Locale::Msgfmt)
+BuildRequires: perl(Module::Install)
 BuildRequires: perl(Padre)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::More)
@@ -41,16 +42,15 @@ Open Resource (Shortcut: Ctrl + Shift + R)
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+%{__perl} Build.PL installdirs=vendor
+./Build
 
 %check
-%{make} test
+./Build test
 
 %install
 rm -rf %buildroot
-%makeinstall_std
+./Build install destdir=%{buildroot}
 
 %clean
 rm -rf %buildroot
