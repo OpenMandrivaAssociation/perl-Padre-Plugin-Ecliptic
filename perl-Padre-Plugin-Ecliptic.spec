@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	5
 
 Summary:	Padre plugin that provides Eclipse-like useful features
 License:	GPL+ or Artistic
